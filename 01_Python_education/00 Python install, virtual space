@@ -1,2 +1,21 @@
-01. 파이썬설치 
-02. 가상환경 세팅
+# 파이썬 설치 및 가상환경 세팅
+
+1) D: 폴더생성 
+  - 예 : venv
+
+2) cmd에서 D:\venv 폴더로 이동
+
+3) 가상폴더 생성
+python -m venv venvPython1
+
+4)  가상환경 실행
+D:\venv\venvPython2\Scripts\activate.bat
+
+5) 가상환경 내 주피터랩 설치
+pip install jupyterlab
+
+6) 주피터랩 실행
+jupyter lab
+
+7) ipykernal 설치
+python -m ipykernel install --user --name venvPython2 -display-name venvPython2
