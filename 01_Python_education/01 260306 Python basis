@@ -60,3 +60,7 @@ with open('students.csv', 'r') as file:
     reader = csv.DictReader(file)
     for row in reader:
         print(row)
+
+
+#########################################################
+pip freeze 명령어 통해 librarury 관리 및 배포 가능
