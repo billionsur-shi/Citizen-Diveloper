@@ -1,1 +1,35 @@
+import csv
 
+# CSV 파일 쓰기
+
+with open('example.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['이름', '나이', '도시'])
+    writer.writerow(['서민걸', 30, '부산'])
+    writer.writerow(['김신', 25, '창원'])
+
+with open('example.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+
+
+########################################################
+
+import json
+
+#JSON 파일 쓰기
+data = {
+    'name': '서민걸',
+    'age': 30,
+    'city': '부산'
+}
+
+with open('example.json', 'w') as file:
+    json.dump(data, file)
+
+# JSON 파일 읽기
+with open('example.json', 'r') as file:
+    data = json.load(file)
+    print(data)
