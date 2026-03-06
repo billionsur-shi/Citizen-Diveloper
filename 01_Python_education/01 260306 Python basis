@@ -33,3 +33,31 @@ with open('example.json', 'w') as file:
 with open('example.json', 'r') as file:
     data = json.load(file)
     print(data)
+
+
+###########################################################
+
+import csv
+
+# 학생 성적 데이터
+
+students = [
+    {'이름': '서민걸', '국어': 95, '영어': 88, '수학': 90},
+    {'이름': '김신', '국어': 92, '영어': 84, '수학': 87},
+    {'이름': '이민호', '국어': 88, '영어': 92, '수학': 86}
+]
+
+# CSV 파일에 학생 성적 데이터 쓰기
+with open('students.csv', 'w', newline='') as file:
+    writer = csv.DictWriter(file, fieldnames = ['이름', '국어', '영어', '수학'])
+    writer.writeheader()
+    for student in students:
+        writer.writerow(student)
+
+# CSV 파일에서 학생 성적 데이터 읽기
+with open('students.csv', 'r') as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(row)
+
+
